@@ -42,7 +42,7 @@ update(event){
                
       }
       this.setState({changeDue: denominations});
-      this.setState({yourChange: `The total change due is $${this.state.amountReceived - this.state.amountDue}`})
+      this.setState({yourChange: `Total change due is $${this.state.amountReceived - this.state.amountDue}`})
     
       return changeDue;
     }
@@ -54,51 +54,55 @@ render(){
       <hr></hr>
       <div className = "row">
         <div className = "col">
+          <div>
               <div>Enter Information</div>
-              <div>
               <label>How much is due?</label>
               <input name = 'amountDue' type = 'number' placeholder = 'Change due is' defaultValue = {this.state.amountDue} onChange = {this.update}/>
-              </div>
-              <div>
               <label>How much was received?</label>
               <input name = 'amountReceived' type = 'number' placeholder = '00.00' defaultValue = {this.state.amountReceived} onChange = {this.update}/>
-              </div>
               <button type = 'button' className = 'btn btn-primary' name = 'calculate' onClick = {() => this.calculate(this.state.amountDue, this.state.amountReceived)}>Calculate</button>
+          </div>
         </div>
         <div className = "col">
-        <div className="alert alert-success" role="alert">
-           {this.state.yourChange}
-        </div>
+          <p id = 'outcome'> {this.state.yourChange}</p>
           <div className = "row">
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+              <div className='well'>
                 <h1>Twenties</h1>
                 <p className="change">{this.state.changeDue[0][2]}</p>
               </div>
               </div>
+              </div>
             </div>
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+              <div className='well'>
                 <h1>Tens</h1>
                 <p className="change">{this.state.changeDue[1][2]}</p>
               </div>
               </div>
+              </div>
             </div>
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+              <div className='well'>
                 <h1>Fives</h1>
                 <p className="change">{this.state.changeDue[2][2]}</p>
               </div>
               </div>
+              </div>
             </div>
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+              <div className='well'>
                 <h1>Ones</h1>
                 <p className="change">{this.state.changeDue[3][2]}</p>
+              </div>
               </div>
               </div>
             </div>
@@ -106,33 +110,41 @@ render(){
           <div className = "row">
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+            <div className='well'>
               <h1>Quarter</h1>
               <p className="change">{this.state.changeDue[4][2]}</p>
             </div>
             </div>
+            </div>
           </div>
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+            <div className='well'>
               <h1>Dime</h1>
               <p className="change">{this.state.changeDue[5][2]}</p>
             </div>
             </div>
+            </div>
           </div>
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+            <div className='well'>
               <h1>Nickle</h1>
               <p className="change">{this.state.changeDue[6][2]}</p>
             </div>
             </div>
+            </div>
           </div>
             <div className = "col">
               <div className="card">
-              <div className="card-body well">
+              <div className="card-body">
+            <div className='well'>
               <h1>Penny</h1>
               <p className="change">{this.state.changeDue[7][2]}</p>
+            </div>
             </div>
             </div>
           </div>
